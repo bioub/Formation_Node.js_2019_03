@@ -14,6 +14,8 @@ nbs
   .map((nb) => nb ** 2)
   .forEach((nb) => console.log(nb));
 
+console.log(nbs.reduce((acc, nb) => acc + nb, 0));
+
 console.log('Fin');
 
 // pile d'appels
