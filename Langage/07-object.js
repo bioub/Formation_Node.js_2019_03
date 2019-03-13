@@ -93,5 +93,17 @@ console.log(coordsA.hasOwnProperty('x')); // true
 console.log(coordsA.hasOwnProperty('infos')); // false (pas une clé de l'objet)
 
 
-const coordsB = new Coords();
+const coordsB = new Coords(10, 20, 10);
 console.log(coordsA.infos === coordsB.infos); // true
+
+delete coordsA.x;
+console.log(JSON.stringify(coordsA));
+console.log(JSON.stringify(coordsB));
+
+// Pour ne boucler que sur les propriétés
+for (const key in coordsA) {
+  if (coordsA.hasOwnProperty(key)) {
+    console.log(key);
+    console.log(coords[key]);
+  }
+}

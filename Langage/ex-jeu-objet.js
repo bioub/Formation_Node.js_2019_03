@@ -21,8 +21,13 @@ const random = {
 
 const readline = require('readline');
 
-function Jeu () {
-  this.entierAlea = random.getRandomIntInclusive(0, 100);
+function Jeu (options) {
+  options = options || {};
+
+  const min = options.min || 0;
+  const max = options.max !== undefined ? options.max : 100;
+
+  this.entierAlea = random.getRandomIntInclusive(min, max);
   this.essais = [];
   this._rl = readline.createInterface({
     input: process.stdin,
@@ -35,7 +40,7 @@ Jeu.prototype.jouer = function() {
     console.log('Vous avez déjà joué : ' + this.essais.join(' | '));
   }
 
-  this._rl.question('Quel est le nombre ? ', (answer) => {
+  this._rl.question('Quel est le nombre ? ', function (answer) {
     const entierSaisi = parseInt(answer);
 
     if (isNaN(entierSaisi)) {
