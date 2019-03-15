@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "morgan": "^1.9.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "eslint": "^5.12.1",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.3.0",
+    "sinon": "^7.2.7",
+    "sinon-chai": "^3.3.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "mocha --recursive",
+    "coverage": "nyc --reporter html npm t"
+  }
+}

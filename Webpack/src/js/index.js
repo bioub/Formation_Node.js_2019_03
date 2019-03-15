@@ -1,8 +1,11 @@
 // import '@babel/polyfill';
 import 'core-js/fn/promise';
+import { titi } from './test-tree-shaking';
 // ou import '@babel/polyfill';
 
 const divElt = document.querySelector('.horloge');
+
+console.log(titi);
 
 /*
 document.addEventListener('click', async () => {

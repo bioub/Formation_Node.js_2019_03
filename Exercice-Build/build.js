@@ -42,7 +42,9 @@ async function buildHtml() {
 
 (async () => {
   await rmAndMkdir(distPath)
-  await buildJs();
-  await buildHtml();
-
+  await Promise.all([
+    buildJs(),
+    buildHtml(),
+  ]);
+  console.log('DONE');
 })().catch(console.log);
